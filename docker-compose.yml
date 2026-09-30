@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:17
+    container_name: techscope_db
+    restart: always
+    environment:
+      POSTGRES_DB: techscope_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - techscope_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  techscope_postgres_data:
